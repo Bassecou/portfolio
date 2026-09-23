@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bassecou Toure | Data Analyst — Data Quality & Business Intelligence</title>
   <meta name="description" content="Portfolio professionnel de Bassecou Toure, Data Analyst junior spécialisé en Data Quality et Business Intelligence. Excel, SQL, Power BI, Python.">
-  
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Bassecou Toure | Data Analyst Portfolio">
@@ -16,12 +16,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
-  
+
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Feuille de style personnalisée -->
   <link rel="stylesheet" href="css/style.css">
+  <!-- Feuille de style additive : carrousel projets + section "autres projets" -->
+  <link rel="stylesheet" href="css/projects-carousel.css">
 </head>
 <body>
 
@@ -30,7 +32,7 @@
        ========================================================================== -->
   <header class="site-header">
     <div class="container nav-container">
-      
+
       <!-- Brand Logo -->
       <a href="#accueil" class="brand-logo" aria-label="Accueil Bassecou Toure">
         <span>BASSECOU TOURE</span>
@@ -43,6 +45,7 @@
         <a href="#apropos" class="nav-link">À Propos</a>
         <a href="#expertise" class="nav-link">Expertise</a>
         <a href="#projets" class="nav-link">Projets</a>
+        <a href="#autres-projets" class="nav-link">Autres Projets</a>
         <a href="#parcours" class="nav-link">Parcours</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
@@ -74,6 +77,7 @@
         <li><a href="#apropos" class="nav-link">À Propos</a></li>
         <li><a href="#expertise" class="nav-link">Expertise</a></li>
         <li><a href="#projets" class="nav-link">Projets Data</a></li>
+        <li><a href="#autres-projets" class="nav-link">Autres Projets</a></li>
         <li><a href="#parcours" class="nav-link">Parcours & Formation</a></li>
         <li><a href="#contact" class="nav-link">Contact Direct</a></li>
       </ul>
@@ -87,10 +91,10 @@
          ========================================================================== -->
     <section id="accueil" class="hero-section">
       <div class="container hero-grid">
-        
+
         <!-- Colonne Gauche : Typographie & Contenu -->
         <div class="hero-content">
-          
+
           <!-- Badge Statut Réel -->
           <div class="hero-meta-badge">
             <span class="status-indicator"></span>
@@ -185,7 +189,7 @@
          ========================================================================== -->
     <section id="apropos" class="about-section">
       <div class="container about-grid">
-        
+
         <div>
           <span class="section-label">À Propos</span>
           <h2 class="section-heading-editorial">
@@ -214,7 +218,7 @@
          ========================================================================== -->
     <section id="expertise" class="expertise-section">
       <div class="container">
-        
+
         <div class="expertise-header">
           <div>
             <span class="section-label">Domaines de Compétences</span>
@@ -224,7 +228,7 @@
         </div>
 
         <div class="expertise-grid">
-          
+
           <!-- 01 : Data Management & Quality -->
           <article class="expertise-card reveal-on-scroll">
             <div>
@@ -304,10 +308,11 @@
 
     <!-- ==========================================================================
          6. SECTION SOMBRE "SELECTED DATA PROJECTS" (CŒUR DU PORTFOLIO)
+         Carrousel horizontal — 4 projets, cartes compactes, détails en accordéon
          ========================================================================== -->
     <section id="projets" class="projects-section-dark">
       <div class="container">
-        
+
         <div class="projects-header-dark">
           <div>
             <span class="section-label" style="color: var(--text-light-muted);">Réalisations Réelles</span>
@@ -318,317 +323,351 @@
           <span class="projects-count-indicator">4 Cas Concrets</span>
         </div>
 
-        <div class="projects-editorial-list">
-          
-          <!-- ================= PROJET 01 ================= -->
-          <article class="project-editorial-card reveal-on-scroll">
-            
-            <div class="project-number-col">
-              <span class="project-giant-number">01<span class="number-dot">.</span></span>
-              <span class="project-type-tag">Business Intelligence</span>
+        <div class="projects-carousel-wrapper">
+
+          <button type="button" class="carousel-nav-btn carousel-nav-prev" aria-label="Projet précédent">
+            <i data-lucide="chevron-left"></i>
+          </button>
+
+          <div class="projects-carousel-viewport">
+            <div class="projects-carousel-track">
+
+              <!-- ================= SLIDE 1 : LES PIONNIERS — NBA ANALYTICS (Excel) ================= -->
+              <article class="carousel-slide">
+                <div class="pc-card">
+                  <div class="pc-visual">
+                    <img src="img/dashboard-pionniers.jpg" alt="Dashboard Excel interactif — Les Pionniers, NBA Analytics" loading="lazy">
+                  </div>
+                  <div class="pc-body">
+                    <span class="project-type-tag">Excel · Business Analytics</span>
+                    <h3 class="pc-title">Les Pionniers — NBA Analytics</h3>
+                    <div class="pc-tags">
+                      <span class="tech-badge-dark">Excel</span>
+                      <span class="tech-badge-dark">Tableaux Croisés Dynamiques</span>
+                      <span class="tech-badge-dark">Power Query</span>
+                      <span class="tech-badge-dark">Dashboard Interactif</span>
+                    </div>
+                    <p class="pc-desc">
+                      Transformation de données sportives (569 joueurs, 30 équipes) en indicateurs de performance exploitables — dashboard Excel interactif pensé pour un public non technique (coach, dirigeants).
+                    </p>
+                    <div class="pc-actions">
+                      <a href="https://github.com/Bassecou/P2-analyse-nba-excel" target="_blank" rel="noopener noreferrer" class="btn-github-project">
+                        <span>Voir sur GitHub</span>
+                        <i data-lucide="arrow-up-right" style="width: 16px; height: 16px;"></i>
+                      </a>
+                      <button type="button" class="btn-toggle-details" data-target="details-pionniers" aria-expanded="false">
+                        <span>En savoir plus</span>
+                        <i data-lucide="chevron-down"></i>
+                      </button>
+                    </div>
+                    <div class="pc-details" id="details-pionniers" hidden>
+                      <div class="star-framework-grid">
+                        <div class="star-block">
+                          <span class="star-label"><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> Problématique</span>
+                          <p class="star-text">Club semi-professionnel visant la montée en division supérieure, sans indicateurs objectifs pour orienter les décisions sportives à partir de données brutes.</p>
+                        </div>
+                        <div class="star-block">
+                          <span class="star-label"><i data-lucide="wrench" style="width: 14px; height: 14px;"></i> Traitement / Analyse</span>
+                          <p class="star-text">Nettoyage et structuration des données sous Excel, construction de tableaux croisés dynamiques et calcul de ratios avancés (AST/TO, PIE, contribution aux points d'équipe).</p>
+                        </div>
+                        <div class="star-block">
+                          <span class="star-label"><i data-lucide="layout" style="width: 14px; height: 14px;"></i> Solution</span>
+                          <p class="star-text">Dashboard Excel interactif et synthétique, pensé pour un public non technique (coach, dirigeants), complété par un rapport d'analyse détaillé.</p>
+                        </div>
+                        <div class="star-block result-highlight">
+                          <span class="star-label"><i data-lucide="check-circle" style="width: 14px; height: 14px;"></i> Résultat</span>
+                          <p class="star-text">Indicateurs exploitables pour objectiver les choix de recrutement et de rotation, livrés sous forme de dashboard + rapport PDF.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- ================= SLIDE 2 : FOODY (SQL + Power BI) ================= -->
+              <article class="carousel-slide">
+                <div class="pc-card">
+                  <div class="pc-visual">
+                    <img src="img/foody-rapport.jpg" alt="Rapport Power BI multi-pages — Foody, analyse commerciale et logistique" loading="lazy">
+                  </div>
+                  <div class="pc-body">
+                    <span class="project-type-tag">SQL + Power BI</span>
+                    <h3 class="pc-title">Foody — Analyse Commerciale & Logistique</h3>
+                    <div class="pc-tags">
+                      <span class="tech-badge-dark">SQL</span>
+                      <span class="tech-badge-dark">SQLite</span>
+                      <span class="tech-badge-dark">Power BI</span>
+                      <span class="tech-badge-dark">Modélisation Relationnelle</span>
+                    </div>
+                    <p class="pc-desc">
+                      Modélisation d'une base relationnelle et requêtage SQL en 6 modules, restitués dans un rapport Power BI multi-pages pour une société fictive d'import-export alimentaire.
+                    </p>
+                    <div class="pc-actions">
+                      <a href="https://github.com/Bassecou/foody-sql-powerbi-analytics" target="_blank" rel="noopener noreferrer" class="btn-github-project">
+                        <span>Voir sur GitHub</span>
+                        <i data-lucide="arrow-up-right" style="width: 16px; height: 16px;"></i>
+                      </a>
+                      <button type="button" class="btn-toggle-details" data-target="details-foody" aria-expanded="false">
+                        <span>En savoir plus</span>
+                        <i data-lucide="chevron-down"></i>
+                      </button>
+                    </div>
+                    <div class="pc-details" id="details-foody" hidden>
+                      <div class="star-framework-grid">
+                        <div class="star-block">
+                          <span class="star-label"><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> Problématique</span>
+                          <p class="star-text">Société fictive d'import-export alimentaire ayant besoin de visibilité sur son activité commerciale et logistique à partir d'une base de données relationnelle brute.</p>
+                        </div>
+                        <div class="star-block">
+                          <span class="star-label"><i data-lucide="wrench" style="width: 14px; height: 14px;"></i> Traitement / Analyse</span>
+                          <p class="star-text">Modélisation d'un MPD (8 tables), requêtage SQL en 6 modules (jointures, sous-requêtes, opérations ensemblistes) sous SQLite.</p>
+                        </div>
+                        <div class="star-block">
+                          <span class="star-label"><i data-lucide="layout" style="width: 14px; height: 14px;"></i> Solution</span>
+                          <p class="star-text">Exploration et restitution via un rapport Power BI multi-pages (Synthèse Globale, Performance Commerciale, Suivi Logistique).</p>
+                        </div>
+                        <div class="star-block result-highlight">
+                          <span class="star-label"><i data-lucide="check-circle" style="width: 14px; height: 14px;"></i> Résultat</span>
+                          <p class="star-text">Indicateurs consolidés (CA total, commandes, clients, suivi logistique) prêts à l'emploi pour la prise de décision.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- ================= SLIDE 3 : NETTOYAGE & FIABILISATION DE DONNÉES (Python) ================= -->
+              <article class="carousel-slide">
+                <div class="pc-card">
+                  <div class="pc-visual pc-visual-code">
+                    <div class="project-visual-preview">
+                      <div class="preview-header">
+                        <div class="dots"><span></span><span></span><span></span></div>
+                        <span>Python / Pandas — Rapprochement & Détection des valeurs atypiques</span>
+                      </div>
+                      <code>df_merged = pd.merge(erp_clean, web_clean, on='id_web', how='outer', indicator=True)<br>outliers_iqr = df_merged[df_merged['price'] > (q3 + 1.5 * iqr)]</code>
+                    </div>
+                  </div>
+                  <div class="pc-body">
+                    <span class="project-type-tag">Data Quality & Python</span>
+                    <h3 class="pc-title">Nettoyage & Fiabilisation de Données</h3>
+                    <div class="pc-tags">
+                      <span class="tech-badge-dark">Python</span>
+                      <span class="tech-badge-dark">Pandas</span>
+                      <span class="tech-badge-dark">NumPy</span>
+                      <span class="tech-badge-dark">Détection des Outliers</span>
+                    </div>
+                    <p class="pc-desc">
+                      Nettoyage, rapprochement et fiabilisation de données ERP / e-commerce comportant doublons et anomalies, pour produire des tables exploitables et sans biais.
+                    </p>
+                    <div class="pc-actions">
+                      <a href="https://github.com/Bassecou/P6-nettoyage-donnees-stock" target="_blank" rel="noopener noreferrer" class="btn-github-project">
+                        <span>Voir sur GitHub</span>
+                        <i data-lucide="arrow-up-right" style="width: 16px; height: 16px;"></i>
+                      </a>
+                      <button type="button" class="btn-toggle-details" data-target="details-nettoyage" aria-expanded="false">
+                        <span>En savoir plus</span>
+                        <i data-lucide="chevron-down"></i>
+                      </button>
+                    </div>
+                    <div class="pc-details" id="details-nettoyage" hidden>
+                      <div class="star-framework-grid">
+                        <div class="star-block">
+                          <span class="star-label"><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> Problématique</span>
+                          <p class="star-text">Nécessité de rapprocher des données d'inventaire et de ventes issues de deux sources disjointes (ERP et site e-commerce) contenant des doublons et des anomalies.</p>
+                        </div>
+                        <div class="star-block">
+                          <span class="star-label"><i data-lucide="wrench" style="width: 14px; height: 14px;"></i> Traitement / Analyse</span>
+                          <p class="star-text">Chargement sous Pandas, nettoyage des formats, jointures complexes, vérification de l'unicité des références et identification des valeurs aberrantes (IQR).</p>
+                        </div>
+                        <div class="star-block">
+                          <span class="star-label"><i data-lucide="layout" style="width: 14px; height: 14px;"></i> Solution</span>
+                          <p class="star-text">Script Python structuré et reproductible assurant le rapprochement des catalogues, la détection des incohérences de prix et la génération d'un fichier propre.</p>
+                        </div>
+                        <div class="star-block result-highlight">
+                          <span class="star-label"><i data-lucide="check-circle" style="width: 14px; height: 14px;"></i> Résultat</span>
+                          <p class="star-text">Réconciliation intégrale des données ERP / Vente en ligne, identification précise des erreurs de valorisation de stock et tables fiabilisées pour l'analyse.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- ================= SLIDE 4 : ANALYSE DE SATISFACTION CLIENT (SQL) ================= -->
+              <article class="carousel-slide">
+                <div class="pc-card">
+                  <div class="pc-visual pc-visual-code">
+                    <div class="project-visual-preview">
+                      <div class="preview-header">
+                        <div class="dots"><span></span><span></span><span></span></div>
+                        <span>PostgreSQL — Calcul dynamique du Net Promoter Score</span>
+                      </div>
+                      <code>WITH nps_calc AS (<br>&nbsp;&nbsp;SELECT COUNT(*) AS total, COUNT(*) FILTER (WHERE score >= 9) AS promoteurs, COUNT(*) FILTER (WHERE score <= 6) AS detracteurs FROM avis_clients<br>) SELECT ROUND((promoteurs::numeric / total - detracteurs::numeric / total) * 100, 2) AS nps_score FROM nps_calc;</code>
+                    </div>
+                  </div>
+                  <div class="pc-body">
+                    <span class="project-type-tag">SQL & PostgreSQL</span>
+                    <h3 class="pc-title">Analyse de Satisfaction Client</h3>
+                    <div class="pc-tags">
+                      <span class="tech-badge-dark">SQL</span>
+                      <span class="tech-badge-dark">PostgreSQL</span>
+                      <span class="tech-badge-dark">NPS</span>
+                      <span class="tech-badge-dark">Requêtes CTEs</span>
+                    </div>
+                    <p class="pc-desc">
+                      Analyse de données de satisfaction client sous PostgreSQL (NPS, CTEs) pour identifier les causes d'insatisfaction et produire des recommandations actionnables.
+                    </p>
+                    <div class="pc-actions">
+                      <a href="https://github.com/Bassecou/P5-satisfaction-client-sql" target="_blank" rel="noopener noreferrer" class="btn-github-project">
+                        <span>Voir sur GitHub</span>
+                        <i data-lucide="arrow-up-right" style="width: 16px; height: 16px;"></i>
+                      </a>
+                      <button type="button" class="btn-toggle-details" data-target="details-satisfaction" aria-expanded="false">
+                        <span>En savoir plus</span>
+                        <i data-lucide="chevron-down"></i>
+                      </button>
+                    </div>
+                    <div class="pc-details" id="details-satisfaction" hidden>
+                      <div class="star-framework-grid">
+                        <div class="star-block">
+                          <span class="star-label"><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> Problématique</span>
+                          <p class="star-text">Comprendre les causes profondes de l'insatisfaction client à partir d'une volumétrie importante de retours, notes et historiques de commandes.</p>
+                        </div>
+                        <div class="star-block">
+                          <span class="star-label"><i data-lucide="wrench" style="width: 14px; height: 14px;"></i> Traitement / Analyse</span>
+                          <p class="star-text">Extraction et agrégation sous PostgreSQL avec des requêtes SQL avancées (CTEs, fonctions de fenêtrage, calculs statistiques) pour catégoriser les retours.</p>
+                        </div>
+                        <div class="star-block">
+                          <span class="star-label"><i data-lucide="layout" style="width: 14px; height: 14px;"></i> Solution</span>
+                          <p class="star-text">Segmentation des répondants (Promoteurs, Passifs, Détracteurs), croisement avec les délais de livraison et cartographie des motifs d'insatisfaction.</p>
+                        </div>
+                        <div class="star-block result-highlight">
+                          <span class="star-label"><i data-lucide="check-circle" style="width: 14px; height: 14px;"></i> Résultat</span>
+                          <p class="star-text">Identification des étapes critiques de rupture de service et production de recommandations actionnables pour orienter les décisions d'amélioration.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
             </div>
+          </div>
 
-            <div class="project-content-col">
-              <div class="project-top-row">
-                <h3 class="project-card-title">Dashboard de Pilotage PMO</h3>
-              </div>
+          <button type="button" class="carousel-nav-btn carousel-nav-next" aria-label="Projet suivant">
+            <i data-lucide="chevron-right"></i>
+          </button>
 
-              <!-- Tech Badges -->
-              <div class="project-tech-badges">
-                <span class="tech-badge-dark">Power BI</span>
-                <span class="tech-badge-dark">Power Query</span>
-                <span class="tech-badge-dark">DAX</span>
-                <span class="tech-badge-dark">Modélisation en Étoile</span>
-                <span class="tech-badge-dark">Pilotage de Projets</span>
-              </div>
+        </div>
 
-              <!-- Méthode STAR -->
-              <div class="star-framework-grid">
-                <div class="star-block">
-                  <span class="star-label"><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> Problématique</span>
-                  <p class="star-text">
-                    Données projets dispersées et hétérogènes rendant le suivi budgétaire et l'état d'avancement des chantiers chronophage et source d'erreurs pour le pilotage.
-                  </p>
-                </div>
+        <div class="carousel-dots" role="tablist" aria-label="Navigation des projets"></div>
 
-                <div class="star-block">
-                  <span class="star-label"><i data-lucide="wrench" style="width: 14px; height: 14px;"></i> Traitement / Analyse</span>
-                  <p class="star-text">
-                    Nettoyage et structuration avec Power Query, modélisation relationnelle en étoile (faits / dimensions) et création de mesures DAX calculées.
-                  </p>
-                </div>
+      </div>
+    </section>
 
-                <div class="star-block">
-                  <span class="star-label"><i data-lucide="layout" style="width: 14px; height: 14px;"></i> Solution</span>
-                  <p class="star-text">
-                    Conception d'un tableau de bord décisionnel Power BI centralisant l'avancement global, la consommation budgétaire et la matrice des risques.
-                  </p>
-                </div>
 
-                <div class="star-block result-highlight">
-                  <span class="star-label"><i data-lucide="check-circle" style="width: 14px; height: 14px;"></i> Résultat</span>
-                  <p class="star-text">
-                    Restitution unifiée et lisible pour les décideurs, fiabilisation complète des indicateurs et automatisation du reporting périodique.
-                  </p>
-                </div>
-              </div>
+    <!-- ==========================================================================
+         6bis. SECTION "VOIR MES AUTRES PROJETS" (FOND CLAIR)
+         ========================================================================== -->
+    <section id="autres-projets" class="other-projects-section">
+      <div class="container">
 
-              <!-- Visual Preview / Highlight -->
-              <div class="project-visual-preview">
-                <div class="preview-header">
-                  <div class="dots"><span></span><span></span><span></span></div>
-                  <span>Power BI — Modélisation & Mesure DAX</span>
-                </div>
-                <code>Avancement_Pondere = DIVIDE(SUMX('fct_projets', 'fct_projets'[avancement] * 'fct_projets'[budget_alloue]), SUM('fct_projets'[budget_alloue]), 0)</code>
-              </div>
+        <div class="other-projects-header">
+          <span class="section-label">Fonds de Portfolio</span>
+          <h2 class="section-heading-editorial">VOIR MES AUTRES PROJETS</h2>
+          <p class="hero-position" style="margin-top: 0.75rem;">6 Projets Complémentaires</p>
+        </div>
 
-              <!-- Action Link -->
-              <div class="project-footer-row">
-                <a href="https://github.com/Bassecou/P7-dashboard-pmo-powerbi" target="_blank" rel="noopener noreferrer" class="btn-github-project">
-                  <span>Voir le projet sur GitHub</span>
-                  <i data-lucide="arrow-up-right" style="width: 16px; height: 16px;"></i>
-                </a>
-                <span class="project-source-badge">
-                  <i data-lucide="git-branch" style="width: 14px; height: 14px;"></i>
-                  Dépôt public vérifiable
-                </span>
-              </div>
+        <div class="other-projects-grid">
 
+          <article class="other-project-card reveal-on-scroll">
+            <span class="project-type-tag">Power BI</span>
+            <h3 class="opc-title">Dashboard de Pilotage PMO</h3>
+            <p class="opc-desc">Suivi budgétaire et avancement de projets consolidés dans un tableau de bord décisionnel Power BI (modélisation en étoile, mesures DAX).</p>
+            <div class="pc-tags">
+              <span class="tag-badge">Power BI</span>
+              <span class="tag-badge">Power Query</span>
+              <span class="tag-badge">DAX</span>
             </div>
+            <a href="https://github.com/Bassecou/P7-dashboard-pmo-powerbi" target="_blank" rel="noopener noreferrer" class="opc-link">
+              <span>Voir sur GitHub</span>
+              <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+            </a>
           </article>
 
-
-          <!-- ================= PROJET 02 ================= -->
-          <article class="project-editorial-card reveal-on-scroll">
-            
-            <div class="project-number-col">
-              <span class="project-giant-number">02<span class="number-dot">.</span></span>
-              <span class="project-type-tag">Data Quality & Python</span>
+          <article class="other-project-card reveal-on-scroll">
+            <span class="project-type-tag">Python / Machine Learning</span>
+            <h3 class="opc-title">Analyse Prédictive Immobilière</h3>
+            <p class="opc-desc">Exploration des déterminants de prix sur un marché immobilier via clustering et régression sous Scikit-learn.</p>
+            <div class="pc-tags">
+              <span class="tag-badge">Python</span>
+              <span class="tag-badge">Scikit-learn</span>
+              <span class="tag-badge">Clustering</span>
             </div>
-
-            <div class="project-content-col">
-              <div class="project-top-row">
-                <h3 class="project-card-title">Nettoyage & Fiabilisation de Données</h3>
-              </div>
-
-              <!-- Tech Badges -->
-              <div class="project-tech-badges">
-                <span class="tech-badge-dark">Python</span>
-                <span class="tech-badge-dark">Pandas</span>
-                <span class="tech-badge-dark">NumPy</span>
-                <span class="tech-badge-dark">Contrôle de Cohérence</span>
-                <span class="tech-badge-dark">Détection des Outliers</span>
-              </div>
-
-              <!-- Méthode STAR -->
-              <div class="star-framework-grid">
-                <div class="star-block">
-                  <span class="star-label"><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> Problématique</span>
-                  <p class="star-text">
-                    Nécessité de rapprocher des données d'inventaire et de ventes issues de deux sources disjointes (ERP et site e-commerce) contenant des doublons et des anomalies.
-                  </p>
-                </div>
-
-                <div class="star-block">
-                  <span class="star-label"><i data-lucide="wrench" style="width: 14px; height: 14px;"></i> Traitement / Analyse</span>
-                  <p class="star-text">
-                    Chargement sous Pandas, nettoyage des formats, jointures complexes, vérification de l'unicité des références et identification des valeurs aberrantes (IQR).
-                  </p>
-                </div>
-
-                <div class="star-block">
-                  <span class="star-label"><i data-lucide="layout" style="width: 14px; height: 14px;"></i> Solution</span>
-                  <p class="star-text">
-                    Script Python structuré et reproductible assurant le rapprochement des catalogues, la détection des incohérences de prix et la génération d'un fichier propre.
-                  </p>
-                </div>
-
-                <div class="star-block result-highlight">
-                  <span class="star-label"><i data-lucide="check-circle" style="width: 14px; height: 14px;"></i> Résultat</span>
-                  <p class="star-text">
-                    Réconciliation intégrale des données ERP / Vente en ligne, identification précise des erreurs de valorisation de stock et tables fiabilisées pour l'analyse.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Visual Preview / Highlight -->
-              <div class="project-visual-preview">
-                <div class="preview-header">
-                  <div class="dots"><span></span><span></span><span></span></div>
-                  <span>Python / Pandas — Rapprochement & Détection des valeurs atypiques</span>
-                </div>
-                <code>df_merged = pd.merge(erp_clean, web_clean, on='id_web', how='outer', indicator=True)<br>outliers_iqr = df_merged[df_merged['price'] > (q3 + 1.5 * iqr)]</code>
-              </div>
-
-              <!-- Action Link -->
-              <div class="project-footer-row">
-                <a href="https://github.com/Bassecou/P6-nettoyage-donnees-stock" target="_blank" rel="noopener noreferrer" class="btn-github-project">
-                  <span>Voir le projet sur GitHub</span>
-                  <i data-lucide="arrow-up-right" style="width: 16px; height: 16px;"></i>
-                </a>
-                <span class="project-source-badge">
-                  <i data-lucide="git-branch" style="width: 14px; height: 14px;"></i>
-                  Dépôt public vérifiable
-                </span>
-              </div>
-
-            </div>
+            <a href="https://github.com/Bassecou/P8-analyse-predictive-immobilier" target="_blank" rel="noopener noreferrer" class="opc-link">
+              <span>Voir sur GitHub</span>
+              <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+            </a>
           </article>
 
-
-          <!-- ================= PROJET 03 ================= -->
-          <article class="project-editorial-card reveal-on-scroll">
-            
-            <div class="project-number-col">
-              <span class="project-giant-number">03<span class="number-dot">.</span></span>
-              <span class="project-type-tag">SQL & PostgreSQL</span>
+          <article class="other-project-card reveal-on-scroll">
+            <span class="project-type-tag">SQL</span>
+            <h3 class="opc-title">Conception d'une Base de Données SQL</h3>
+            <p class="opc-desc">Conception d'un schéma relationnel et écriture de requêtes analytiques pour un cas d'usage secteur assurance.</p>
+            <div class="pc-tags">
+              <span class="tag-badge">SQL</span>
+              <span class="tag-badge">Modélisation Relationnelle</span>
             </div>
-
-            <div class="project-content-col">
-              <div class="project-top-row">
-                <h3 class="project-card-title">Analyse de Satisfaction Client</h3>
-              </div>
-
-              <!-- Tech Badges -->
-              <div class="project-tech-badges">
-                <span class="tech-badge-dark">SQL</span>
-                <span class="tech-badge-dark">PostgreSQL</span>
-                <span class="tech-badge-dark">NPS (Net Promoter Score)</span>
-                <span class="tech-badge-dark">Requêtes CTEs</span>
-                <span class="tech-badge-dark">Recommandations Métier</span>
-              </div>
-
-              <!-- Méthode STAR -->
-              <div class="star-framework-grid">
-                <div class="star-block">
-                  <span class="star-label"><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> Problématique</span>
-                  <p class="star-text">
-                    Comprendre les causes profondes de l'insatisfaction client à partir d'une volumétrie importante de retours, notes et historiques de commandes.
-                  </p>
-                </div>
-
-                <div class="star-block">
-                  <span class="star-label"><i data-lucide="wrench" style="width: 14px; height: 14px;"></i> Traitement / Analyse</span>
-                  <p class="star-text">
-                    Extraction et agrégation sous PostgreSQL avec des requêtes SQL avancées (CTEs, fonctions de fenêtrage, calculs statistiques) pour catégoriser les retours.
-                  </p>
-                </div>
-
-                <div class="star-block">
-                  <span class="star-label"><i data-lucide="layout" style="width: 14px; height: 14px;"></i> Solution</span>
-                  <p class="star-text">
-                    Segmentation des répondants (Promoteurs, Passifs, Détracteurs), croisement avec les délais de livraison et cartographie des motifs d'insatisfaction.
-                  </p>
-                </div>
-
-                <div class="star-block result-highlight">
-                  <span class="star-label"><i data-lucide="check-circle" style="width: 14px; height: 14px;"></i> Résultat</span>
-                  <p class="star-text">
-                    Identification des étapes critiques de rupture de service et production de recommandations actionnables pour orienter les décisions d'amélioration de l'expérience client.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Visual Preview / Highlight -->
-              <div class="project-visual-preview">
-                <div class="preview-header">
-                  <div class="dots"><span></span><span></span><span></span></div>
-                  <span>PostgreSQL — Calcul dynamique du Net Promoter Score</span>
-                </div>
-                <code>WITH nps_calc AS (<br>&nbsp;&nbsp;SELECT COUNT(*) AS total, COUNT(*) FILTER (WHERE score >= 9) AS promoteurs, COUNT(*) FILTER (WHERE score <= 6) AS detracteurs FROM avis_clients<br>) SELECT ROUND((promoteurs::numeric / total - detracteurs::numeric / total) * 100, 2) AS nps_score FROM nps_calc;</code>
-              </div>
-
-              <!-- Action Link -->
-              <div class="project-footer-row">
-                <a href="https://github.com/Bassecou/P5-satisfaction-client-sql" target="_blank" rel="noopener noreferrer" class="btn-github-project">
-                  <span>Voir le projet sur GitHub</span>
-                  <i data-lucide="arrow-up-right" style="width: 16px; height: 16px;"></i>
-                </a>
-                <span class="project-source-badge">
-                  <i data-lucide="git-branch" style="width: 14px; height: 14px;"></i>
-                  Dépôt public vérifiable
-                </span>
-              </div>
-
-            </div>
+            <a href="https://github.com/Bassecou/P3-conception-bdd-sql" target="_blank" rel="noopener noreferrer" class="opc-link">
+              <span>Voir sur GitHub</span>
+              <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+            </a>
           </article>
 
-
-          <!-- ================= PROJET 04 ================= -->
-          <article class="project-editorial-card reveal-on-scroll">
-            
-            <div class="project-number-col">
-              <span class="project-giant-number">04<span class="number-dot">.</span></span>
-              <span class="project-type-tag">Machine Learning & Python</span>
+          <article class="other-project-card reveal-on-scroll">
+            <span class="project-type-tag">Conformité RGPD</span>
+            <h3 class="opc-title">RGPD & Anonymisation des Données</h3>
+            <p class="opc-desc">Mise en conformité RGPD et anonymisation de données pour un courtier en assurance auto, à partir d'un cas de sanction CNIL.</p>
+            <div class="pc-tags">
+              <span class="tag-badge">RGPD</span>
+              <span class="tag-badge">Conformité</span>
+              <span class="tag-badge">Anonymisation</span>
             </div>
+            <a href="https://github.com/Bassecou/P4-rgpd-anonymisation" target="_blank" rel="noopener noreferrer" class="opc-link">
+              <span>Voir sur GitHub</span>
+              <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+            </a>
+          </article>
 
-            <div class="project-content-col">
-              <div class="project-top-row">
-                <h3 class="project-card-title">Analyse Prédictive Immobilière</h3>
-              </div>
-
-              <!-- Tech Badges -->
-              <div class="project-tech-badges">
-                <span class="tech-badge-dark">Python</span>
-                <span class="tech-badge-dark">Scikit-learn</span>
-                <span class="tech-badge-dark">Analyse Exploratoire (EDA)</span>
-                <span class="tech-badge-dark">Clustering (K-Means)</span>
-                <span class="tech-badge-dark">Régression</span>
-              </div>
-
-              <!-- Méthode STAR -->
-              <div class="star-framework-grid">
-                <div class="star-block">
-                  <span class="star-label"><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> Problématique</span>
-                  <p class="star-text">
-                    Explorer les déterminants de valeur sur un marché immobilier complexe et évaluer la pertinence de méthodes prédictives pour estimer les prix.
-                  </p>
-                </div>
-
-                <div class="star-block">
-                  <span class="star-label"><i data-lucide="wrench" style="width: 14px; height: 14px;"></i> Traitement / Analyse</span>
-                  <p class="star-text">
-                    Nettoyage des données foncières, étude des séries temporelles, analyse exploratoire multivariée, regroupement non-supervisé par clustering et régression.
-                  </p>
-                </div>
-
-                <div class="star-block">
-                  <span class="star-label"><i data-lucide="layout" style="width: 14px; height: 14px;"></i> Solution</span>
-                  <p class="star-text">
-                    Construction d'un pipeline complet sous Scikit-learn comparant plusieurs approches de modélisation et mesurant l'importance respective des critères fonciers.
-                  </p>
-                </div>
-
-                <div class="star-block result-highlight">
-                  <span class="star-label"><i data-lucide="check-circle" style="width: 14px; height: 14px;"></i> Résultat</span>
-                  <p class="star-text">
-                    Évaluation rigoureuse de la qualité des estimations (métriques RMSE et R²), compréhension fine des facteurs d'influence et restitution méthodologique complète.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Visual Preview / Highlight -->
-              <div class="project-visual-preview">
-                <div class="preview-header">
-                  <div class="dots"><span></span><span></span><span></span></div>
-                  <span>Python / Scikit-learn — Pipeline de modélisation & clustering</span>
-                </div>
-                <code>scaler = StandardScaler()<br>X_scaled = scaler.fit_transform(features)<br>kmeans = KMeans(n_clusters=4, random_state=42).fit(X_scaled)<br>regressor = LinearRegression().fit(X_train, y_train)</code>
-              </div>
-
-              <!-- Action Link -->
-              <div class="project-footer-row">
-                <a href="https://github.com/Bassecou/P8-analyse-predictive-immobilier" target="_blank" rel="noopener noreferrer" class="btn-github-project">
-                  <span>Voir le projet sur GitHub</span>
-                  <i data-lucide="arrow-up-right" style="width: 16px; height: 16px;"></i>
-                </a>
-                <span class="project-source-badge">
-                  <i data-lucide="git-branch" style="width: 14px; height: 14px;"></i>
-                  Dépôt public vérifiable
-                </span>
-              </div>
-
+          <article class="other-project-card reveal-on-scroll">
+            <span class="project-type-tag">Power BI</span>
+            <h3 class="opc-title">Dashboard Performances BI</h3>
+            <p class="opc-desc">Dashboard Power BI de pilotage de performances (ETL, KPIs stratégiques) pour l'enseigne fictive BottleNeck.</p>
+            <div class="pc-tags">
+              <span class="tag-badge">Power BI</span>
+              <span class="tag-badge">ETL</span>
+              <span class="tag-badge">KPI</span>
             </div>
+            <a href="https://github.com/Bassecou/P9-dashboard-performances-bi" target="_blank" rel="noopener noreferrer" class="opc-link">
+              <span>Voir sur GitHub</span>
+              <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+            </a>
+          </article>
+
+          <article class="other-project-card reveal-on-scroll">
+            <span class="project-type-tag">Stratégie & Business</span>
+            <h3 class="opc-title">Analyse Business & Segmentation de Marché</h3>
+            <p class="opc-desc">Analyse business et segmentation de marché (SWOT, PESTEL, matrice Triple A) pour la société fictive UOI Games.</p>
+            <div class="pc-tags">
+              <span class="tag-badge">SWOT</span>
+              <span class="tag-badge">PESTEL</span>
+              <span class="tag-badge">Stratégie</span>
+            </div>
+            <a href="https://github.com/Bassecou/P10-analyse-business-segmentation" target="_blank" rel="noopener noreferrer" class="opc-link">
+              <span>Voir sur GitHub</span>
+              <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+            </a>
           </article>
 
         </div>
@@ -642,21 +681,21 @@
          ========================================================================== -->
     <section id="parcours" class="career-section">
       <div class="container">
-        
+
         <div class="career-header">
           <span class="section-label">Évolution & Réalisations</span>
           <h2 class="section-heading-editorial">PARCOURS & EXPÉRIENCES</h2>
         </div>
 
         <div class="career-grid">
-          
+
           <!-- Colonne Gauche : Formation -->
           <div>
             <h3 class="career-column-title">
               <i data-lucide="graduation-cap" style="width: 20px; height: 20px; color: var(--accent);"></i>
               Formation Principale
             </h3>
-            
+
             <div class="education-card reveal-on-scroll">
               <h4 class="education-degree">Bac+3 Data Analyst</h4>
               <div class="education-specialty">Parcours Business Intelligence</div>
@@ -682,7 +721,7 @@
             </h3>
 
             <div class="experience-timeline">
-              
+
               <!-- Expérience 1 : Data Mansa -->
               <article class="experience-card reveal-on-scroll">
                 <div class="exp-header-row">
@@ -690,7 +729,7 @@
                   <span class="exp-period">Fév. 2023 – Mars 2023</span>
                 </div>
                 <div class="exp-company">Data Mansa — Stage</div>
-                
+
                 <ul class="exp-missions-list">
                   <li class="exp-mission-item">Collecte, nettoyage, traitement et contrôle rigoureux de données sous Excel.</li>
                   <li class="exp-mission-item">Vérification de la cohérence des informations et détection des doublons.</li>
@@ -712,7 +751,7 @@
                   <span class="exp-period">Juillet 2026</span>
                 </div>
                 <div class="exp-company">Evidence (Les Inattendus) — Immersion professionnelle</div>
-                
+
                 <ul class="exp-missions-list">
                   <li class="exp-mission-item">Collecte, structuration et analyse d'informations digitales multicanales.</li>
                   <li class="exp-mission-item">Analyse du trafic web, des réseaux sociaux et du positionnement SEO.</li>
@@ -741,9 +780,9 @@
          ========================================================================== -->
     <section id="contact" class="contact-section-dark">
       <div class="container">
-        
+
         <div class="contact-editorial-box reveal-on-scroll">
-          
+
           <span class="contact-label-tag">Échange Professionnel</span>
 
           <h2 class="contact-huge-title">
@@ -769,7 +808,7 @@
               <span>Me contacter</span>
               <i data-lucide="arrow-up-right" style="width: 18px; height: 18px;"></i>
             </a>
-            
+
             <a href="https://www.linkedin.com/in/bassecou-toure" target="_blank" rel="noopener noreferrer" class="btn-contact-social">
               <i data-lucide="linkedin" style="width: 18px; height: 18px;"></i>
               <span>LinkedIn</span>
@@ -794,7 +833,7 @@
        ========================================================================== -->
   <footer class="site-footer">
     <div class="container footer-container">
-      
+
       <div class="footer-left">
         <span class="footer-name">Bassecou Toure</span>
         <span>Data Analyst · Data Quality & Business Intelligence</span>
@@ -818,5 +857,7 @@
 
   <!-- JavaScript -->
   <script src="js/script.js"></script>
+  <!-- JavaScript additif : carrousel projets + accordéon "En savoir plus" -->
+  <script src="js/carousel.js"></script>
 </body>
 </html>
