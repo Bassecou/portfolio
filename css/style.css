@@ -576,7 +576,7 @@ a {
 .about-section {
   padding: clamp(5rem, 10vh, 8rem) 0;
   background-color: var(--bg-white);
-  border-bottom: 1px solid var(--border-light);
+    border-top: 1px solid var(--border-light);
 }
 
 .about-grid {
