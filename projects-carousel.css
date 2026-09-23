@@ -1,0 +1,349 @@
+/* ==========================================================================
+   FEUILLE ADDITIVE — CARROUSEL "PROJETS" + SECTION "AUTRES PROJETS"
+   Ne modifie aucune règle de style.css : n'ajoute que les classes nouvelles
+   utilisées par le carrousel de projets et la section "Voir mes autres projets".
+   ========================================================================== */
+
+/* ==========================================================================
+   CARROUSEL — STRUCTURE GÉNÉRALE
+   ========================================================================== */
+.projects-carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.projects-carousel-viewport {
+  flex: 1 1 auto;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.projects-carousel-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 0 2px; /* évite que le focus-outline soit coupé par overflow:hidden */
+}
+
+/* Boutons flèche précédent / suivant */
+.carousel-nav-btn {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-dark-card);
+  border: 1px solid var(--border-dark);
+  color: var(--text-light);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.carousel-nav-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #000000;
+  transform: translateY(-2px);
+}
+
+.carousel-nav-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Points de pagination */
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: clamp(2rem, 4vh, 3rem);
+}
+
+.carousel-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.carousel-dot:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.carousel-dot.is-active {
+  background: var(--accent);
+  transform: scale(1.3);
+}
+
+/* ==========================================================================
+   CARTE PROJET COMPACTE (VUE PAR DÉFAUT DU CARROUSEL)
+   ========================================================================== */
+.pc-card {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  background: var(--bg-dark-card);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: stretch;
+}
+
+.pc-visual {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #000000;
+  min-height: 220px;
+  display: flex;
+}
+
+.pc-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pc-visual.pc-visual-code {
+  padding: 0;
+}
+
+.pc-visual-code .project-visual-preview {
+  margin: 0;
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pc-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.pc-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0.5rem 0 0.9rem;
+}
+
+.pc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+}
+
+.pc-desc {
+  font-size: 0.925rem;
+  line-height: 1.6;
+  color: var(--text-light-muted);
+  margin-bottom: 1.5rem;
+}
+
+.pc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: auto;
+}
+
+.btn-toggle-details {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-light);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-toggle-details:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-toggle-details i {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.25s ease;
+}
+
+.btn-toggle-details[aria-expanded="true"] i {
+  transform: rotate(180deg);
+}
+
+.btn-toggle-details[aria-expanded="true"] span::after {
+  content: '';
+}
+
+/* Panneau de détail (STAR + extrait de code) : masqué par défaut via [hidden] */
+.pc-details {
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  animation: pc-details-fade-in 0.3s ease;
+}
+
+.pc-details .star-framework-grid {
+  margin-bottom: 0;
+}
+
+@keyframes pc-details-fade-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   SECTION "VOIR MES AUTRES PROJETS" (FOND CLAIR)
+   ========================================================================== */
+.other-projects-section {
+  padding: clamp(5rem, 10vh, 8rem) 0;
+  background-color: var(--bg-white);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.other-projects-header {
+  margin-bottom: 3rem;
+}
+
+.other-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.other-project-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-light);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  transition: var(--transition);
+}
+
+.other-project-card:hover {
+  border-color: var(--text-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+}
+
+.other-project-card .project-type-tag {
+  color: var(--text-muted);
+  margin-top: 0;
+}
+
+.opc-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  color: var(--text-dark);
+  margin: 0.6rem 0 0.6rem;
+}
+
+.opc-desc {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.other-project-card .pc-tags {
+  margin-bottom: 1.25rem;
+}
+
+.opc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: auto;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  border-bottom: 1px solid var(--text-dark);
+  padding-bottom: 0.15rem;
+  width: fit-content;
+}
+
+.opc-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 992px) {
+  .pc-card {
+    grid-template-columns: 1fr;
+  }
+
+  .pc-visual {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-carousel-wrapper {
+    gap: 0.6rem;
+  }
+
+  .carousel-nav-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .pc-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pc-actions .btn-github-project,
+  .pc-actions .btn-toggle-details {
+    justify-content: center;
+  }
+
+  .other-projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mode réduit des mouvements */
+@media (prefers-reduced-motion: reduce) {
+  .projects-carousel-track,
+  .pc-details {
+    animation: none;
+    transition-duration: 0.01ms !important;
+  }
+}
