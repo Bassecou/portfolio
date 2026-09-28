@@ -366,64 +366,57 @@
                 </div>
               </article>
 
-              <!-- ================= SLIDE 4 : ANALYSE DE SATISFACTION CLIENT (SQL) ================= -->
-              <article class="carousel-slide">
-                <div class="pc-card">
-                  <div class="pc-visual pc-visual-code">
-                    <div class="project-visual-preview">
-                      <div class="preview-header">
-                        <div class="dots"><span></span><span></span><span></span></div>
-                        <span>PostgreSQL — Calcul dynamique du Net Promoter Score</span>
-                      </div>
-                      <code>WITH nps_calc AS (<br>&nbsp;&nbsp;SELECT COUNT(*) AS total, COUNT(*) FILTER (WHERE score >= 9) AS promoteurs, COUNT(*) FILTER (WHERE score <= 6) AS detracteurs FROM avis_clients<br>) SELECT ROUND((promoteurs::numeric / total - detracteurs::numeric / total) * 100, 2) AS nps_score FROM nps_calc;</code>
-                    </div>
-                  </div>
-                  <div class="pc-body">
-                    <span class="project-type-tag">SQL & PostgreSQL</span>
-                    <h3 class="pc-title">Analyse de Satisfaction Client</h3>
-                    <div class="pc-tags">
-                      <span class="tech-badge-dark">SQL</span>
-                      <span class="tech-badge-dark">PostgreSQL</span>
-                      <span class="tech-badge-dark">NPS</span>
-                      <span class="tech-badge-dark">Requêtes CTEs</span>
-                    </div>
-                    <p class="pc-desc">
-                      Analyse de données de satisfaction client sous PostgreSQL (NPS, CTEs) pour identifier les causes d'insatisfaction et produire des recommandations actionnables.
-                    </p>
-                    <div class="pc-actions">
-                      <a href="https://github.com/Bassecou/P5-satisfaction-client-sql" target="_blank" rel="noopener noreferrer" class="btn-github-project">
-                        <span>Voir sur GitHub</span>
-                        <i data-lucide="arrow-up-right" style="width: 16px; height: 16px;"></i>
-                      </a>
-                      <button type="button" class="btn-toggle-details" data-target="details-satisfaction" aria-expanded="false">
-                        <span>En savoir plus</span>
-                        <i data-lucide="chevron-down"></i>
-                      </button>
-                    </div>
-                    <div class="pc-details" id="details-satisfaction" hidden>
-                      <div class="star-framework-grid">
-                        <div class="star-block">
-                          <span class="star-label"><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> Problématique</span>
-                          <p class="star-text">Comprendre les causes profondes de l'insatisfaction client à partir d'une volumétrie importante de retours, notes et historiques de commandes.</p>
-                        </div>
-                        <div class="star-block">
-                          <span class="star-label"><i data-lucide="wrench" style="width: 14px; height: 14px;"></i> Traitement / Analyse</span>
-                          <p class="star-text">Extraction et agrégation sous PostgreSQL avec des requêtes SQL avancées (CTEs, fonctions de fenêtrage, calculs statistiques) pour catégoriser les retours.</p>
-                        </div>
-                        <div class="star-block">
-                          <span class="star-label"><i data-lucide="layout" style="width: 14px; height: 14px;"></i> Solution</span>
-                          <p class="star-text">Segmentation des répondants (Promoteurs, Passifs, Détracteurs), croisement avec les délais de livraison et cartographie des motifs d'insatisfaction.</p>
-                        </div>
-                        <div class="star-block result-highlight">
-                          <span class="star-label"><i data-lucide="check-circle" style="width: 14px; height: 14px;"></i> Résultat</span>
-                          <p class="star-text">Identification des étapes critiques de rupture de service et production de recommandations actionnables pour orienter les décisions d'amélioration.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-
+              <!-- ================= SLIDE 4 : SPORTDATAPULSE — PERFORMANCE LIGUE 1 (SQL) ================= -->
+<article class="carousel-slide">
+  <div class="pc-card">
+    <div class="pc-visual">
+      <img src="img/P5-sportdatapulse-performance-ligue1.png" alt="Shortlist de recrutement générée par requête SQL — analyse de performance Ligue 1, projet SportDataPulse" loading="lazy">
+    </div>
+    <div class="pc-body">
+      <span class="project-type-tag">SQL & SQLite</span>
+      <h3 class="pc-title">SportDataPulse — Performance Ligue 1</h3>
+      <div class="pc-tags">
+        <span class="tech-badge-dark">SQL</span>
+        <span class="tech-badge-dark">SQLite</span>
+        <span class="tech-badge-dark">Modélisation Relationnelle</span>
+        <span class="tech-badge-dark">Requêtes Analytiques</span>
+      </div>
+      <p class="pc-desc">
+        Conception d'une base de données relationnelle (8 tables) à partir des statistiques joueurs/équipes de Ligue 1 (saison 2024-2025), pour objectiver les décisions de recrutement et de stratégie d'un club professionnel.
+      </p>
+      <div class="pc-actions">
+        <a href="https://github.com/Bassecou/P5-satisfaction-client-sql" target="_blank" rel="noopener noreferrer" class="btn-github-project">
+          <span>Voir sur GitHub</span>
+          <i data-lucide="arrow-up-right" style="width: 16px; height: 16px;"></i>
+        </a>
+        <button type="button" class="btn-toggle-details" data-target="details-satisfaction" aria-expanded="false">
+          <span>En savoir plus</span>
+          <i data-lucide="chevron-down"></i>
+        </button>
+      </div>
+      <div class="pc-details" id="details-satisfaction" hidden>
+        <div class="star-framework-grid">
+          <div class="star-block">
+            <span class="star-label"><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> Problématique</span>
+            <p class="star-text">Données de joueurs et de matchs dispersées dans 8 fichiers hétérogènes, sans base centralisée pour comparer objectivement les performances et orienter le recrutement.</p>
+          </div>
+          <div class="star-block">
+            <span class="star-label"><i data-lucide="wrench" style="width: 14px; height: 14px;"></i> Traitement / Analyse</span>
+            <p class="star-text">Modélisation relationnelle (8 tables liées par clés primaires/étrangères), import sous SQLite, écriture de 10 requêtes d'agrégation et de classement (SUM, AVG, ratios, fenêtrage).</p>
+          </div>
+          <div class="star-block">
+            <span class="star-label"><i data-lucide="layout" style="width: 14px; height: 14px;"></i> Solution</span>
+            <p class="star-text">Requêtes SQL croisant performance, progression et salaire pour générer des shortlists de recrutement sous contrainte budgétaire et identifier les profils sous-exploités.</p>
+          </div>
+          <div class="star-block result-highlight">
+            <span class="star-label"><i data-lucide="check-circle" style="width: 14px; height: 14px;"></i> Résultat</span>
+            <p class="star-text">Shortlist de 10 attaquants finisseurs sous 3M€ de salaire annuel générée en une requête, sur une base couvrant les 18 clubs de Ligue 1 saison 2024-2025.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
             </div>
           </div>
 
